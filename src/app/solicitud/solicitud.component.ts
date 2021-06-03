@@ -21,7 +21,9 @@ export class SolicitudComponent implements OnInit {
 
   enviar() {
     console.log('Enviado');
-    //this.solicitud.apellidos = "enviado";
+    this.solicitud.nombre="";
+    this.solicitud.apellidos = "";
+    
   }
 
   nombre($event:KeyboardEvent) {
@@ -34,8 +36,8 @@ export class SolicitudComponent implements OnInit {
     this.solicitud.apellidos = element.value;
   }
 
-  isDisabled() {
-    return (this.solicitud.apellidos.length < 3 || this.solicitud.nombre.length < 3);
+  isDisabled(solicitud: any) {
+    return (solicitud.apellidos.length < 2 || solicitud.nombre.length < 2);
   }
   
 }

@@ -4,13 +4,13 @@
 <p>Alumno: {{solicitud.nombre}} {{solicitud.apellidos}}</p>
 
 <label>Nombre:</label>
-<input (keyup)="nombre($event)">
+<input (keyup)="nombre($event)" [value]="solicitud.nombre">
 <p *ngIf="!solicitud.nombre.length">
     El nombre no puede ser nulo
 </p>
 
 <p><label>Apellidos:</label>
-<input (keyup)="apellidos($event)">
+<input (keyup)="apellidos($event)" [value]="solicitud.apellidos">
 </p>
 
 <p *ngIf="!solicitud.apellidos.length">
@@ -19,7 +19,7 @@
 
 
 <div class="control">
-    <button (click)="enviar()">Enviar</button>
+    <button [disabled]="isDisabled(solicitud)" (click)="enviar()">Enviar</button>
 </div>
 
 <h2>Listado de solicitudes</h2>
