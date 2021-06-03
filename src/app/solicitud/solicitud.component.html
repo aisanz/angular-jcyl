@@ -1,0 +1,39 @@
+<h1>Solicitud de comedor</h1>
+<h2>Nueva solicitud</h2>
+
+<p>Alumno: {{solicitud.nombre}} {{solicitud.apellidos}}</p>
+
+<label>Nombre:</label>
+<input (keyup)="nombre($event)">
+<p *ngIf="!solicitud.nombre.length">
+    El nombre no puede ser nulo
+</p>
+
+<p><label>Apellidos:</label>
+<input (keyup)="apellidos($event)">
+</p>
+
+<p *ngIf="!solicitud.apellidos.length">
+    Los apellidos no pueden ser nulos
+</p>
+
+
+<div class="control">
+    <button (click)="enviar()">Enviar</button>
+</div>
+
+<h2>Listado de solicitudes</h2>
+<table>
+<tr>
+<th>Nombre</th>
+<th>Apellidos</th>
+</tr>
+<tr *ngFor="let solicitud of solicitudes">
+    <td>{{solicitud.nombre }}</td>
+    <td>{{solicitud.apellidos }}</td>
+</tr>
+</table>
+
+
+
+
