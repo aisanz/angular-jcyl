@@ -1,0 +1,8 @@
+<label>Centro:</label>
+<input (keyup)="buscarCentro($event)" [value]="centroSeleccionado?.nombre">
+
+
+    <div *ngFor="let centro of centrosFiltrados">
+        <p (click)="seleccionarCentro(centro)">{{centro.nombre}}</p>
+    </div>
+
