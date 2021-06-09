@@ -39,5 +39,9 @@ export class SolicitudComponent implements OnInit {
   isDisabled(solicitud: any) {
     return (solicitud.apellidos.length < 2 || solicitud.nombre.length < 2);
   }
+
+  eliminar(solicitud:any) {
+    this.solicitudes = this.solicitudes.filter((solicitudExistente: any) => solicitudExistente.nombre != solicitud.nombre)
+  }
   
 }

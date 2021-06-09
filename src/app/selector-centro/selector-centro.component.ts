@@ -21,7 +21,7 @@ export class SelectorCentroComponent implements OnInit {
   buscarCentro ($event:KeyboardEvent) {
     let element=$event.target as HTMLInputElement
     console.log("escrito ",element.value);
-    this.centrosFiltrados = this.centros.filter(centro => centro.nombre?.includes(element.value));
+    this.centrosFiltrados = this.centros.filter(centro => centro.nombre?.toLocaleLowerCase()?.includes(element.value.toLocaleLowerCase()));
   }
 
   seleccionarCentro(centro:Centro) {

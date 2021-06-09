@@ -26,17 +26,9 @@
 <app-selector-centro></app-selector-centro>
 
 <h2>Listado de solicitudes</h2>
-<table>
-<tr>
-<th>Nombre</th>
-<th>Apellidos</th>
-</tr>
-<tr *ngFor="let solicitud of solicitudes">
-    <td>{{solicitud.nombre }}</td>
-    <td>{{solicitud.apellidos }}</td>
-</tr>
-</table>
-
+<div *ngFor="let solicitud of solicitudes">
+<app-fila-solicitud [solicitud]=solicitud (solicitudEliminada)="eliminar(solicitud)"></app-fila-solicitud>
+</div>
 
 
 
