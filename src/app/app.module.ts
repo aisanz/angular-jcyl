@@ -8,6 +8,11 @@ import { CentroComponent } from './centro/centro.component';
 import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
 import { CentrosComponent } from './centros/centros.component';
 import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
+import {HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+let routes = [{path:'', component:SolicitudComponent},
+              {path:'solicitud',component:CentrosComponent}]
 
 @NgModule({
   declarations: [
@@ -19,8 +24,10 @@ import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.componen
     FilaSolicitudComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

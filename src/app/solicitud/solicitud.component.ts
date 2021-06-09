@@ -9,11 +9,14 @@ import { SolicitudService } from '../solicitud.service';
 export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: "", apellidos:""}
-  solicitudes;
+  solicitudes: any;
 
   constructor(private solicitudService: SolicitudService) { 
     //setInterval(() => {this.solicitud.nombre = '' + Math.random();},2000)
-    this.solicitudes = solicitudService.getSolicitudes();
+  //  this.solicitudes = solicitudService.getSolicitudes();
+    solicitudService.getSolicitudes().then(
+      (data:any) => this.solicitudes = data.items.map((x:any) => x.fields)
+    )
   }
 
   
