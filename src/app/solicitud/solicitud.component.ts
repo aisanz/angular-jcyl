@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SolicitudService } from '../solicitud.service';
 
 @Component({
   selector: 'app-solicitud',
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: "", apellidos:""}
-  solicitudes = [{nombre: "Ana", apellidos:"Sanz"},{nombre: "Luis", apellidos:"Sastre"}]
+  solicitudes;
 
-  constructor() { 
+  constructor(private solicitudService: SolicitudService) { 
     //setInterval(() => {this.solicitud.nombre = '' + Math.random();},2000)
+    this.solicitudes = solicitudService.getSolicitudes();
   }
 
   
