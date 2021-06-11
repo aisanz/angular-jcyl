@@ -5,25 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { CentroComponent } from './centro/centro.component';
-import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
 import { CentrosComponent } from './centros/centros.component';
-import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { SolicitudModuleModule } from './solicitud-module/solicitud-module.module';
 
 let routes = [{path:'', component:SolicitudComponent},
-              {path:'solicitud',component:CentrosComponent}]
+              {path:'centros',component:CentrosComponent}]
 
 @NgModule({
   declarations: [
     AppComponent,
-    SolicitudComponent,
     CentroComponent,
-    SelectorCentroComponent,
-    CentrosComponent,
-    FilaSolicitudComponent
+    CentrosComponent
   ],
   imports: [
+    SolicitudModuleModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

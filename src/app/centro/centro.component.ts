@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterEvent } from '@angular/router';
 import {Centro} from "../centros/centros.component"
 
 @Component({
@@ -11,7 +12,8 @@ import {Centro} from "../centros/centros.component"
 export class CentroComponent implements OnInit {
 
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
